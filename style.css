@@ -1,0 +1,156 @@
+/* Global */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f9f9fb;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Splash */
+#splash {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 2s ease forwards;
+  animation-delay: 2s;
+}
+.splash-logo {
+  width: 100px;
+  height: 100px;
+}
+.splash-title {
+  color: white;
+  margin-top: 15px;
+  font-size: 28px;
+  font-weight: bold;
+}
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* Header */
+.app-header {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Tabs */
+.tab {
+  display: none;
+  padding: 20px;
+  margin-bottom: 80px;
+}
+.tab.active {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cards */
+.card {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Inputs */
+.input-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+button {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+button:hover {
+  opacity: 0.9;
+}
+.save-btn {
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* Lists */
+#taskList li, #taskListFull li {
+  background: rgba(240,240,255,0.7);
+  padding: 12px;
+  border-radius: 10px;
+  margin: 6px 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#taskList li:hover, #taskListFull li:hover {
+  background: rgba(200,200,255,0.7);
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+}
+.navbar button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  background: none;
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar button.active {
+  color: #4e54c8;
+}
+.navbar button .material-icons {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+/* Charts */
+canvas {
+  display: block;
+  margin: 0 auto 10px;
+}
